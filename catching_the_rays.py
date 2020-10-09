@@ -121,7 +121,6 @@ def main():
     collision_list = pygame.sprite.spritecollide(collector, cloud_list, False)
 
 
-    #collector = Collector(HEIGHT//2, WIDTH//2, 40, 40, colors_scheme.YELLOW, 0, 0, display)
     all_sprites = pygame.sprite.Group()
     all_sprites.add(collector)
     clouds = pygame.sprite.Group()
