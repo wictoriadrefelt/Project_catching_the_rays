@@ -1,0 +1,8 @@
+import pygame
+
+IMAGE = pygame.image.load(os.path.join('images', 'stylized-basic-cloud.png')).convert_alpha()
+#IMAGE = pygame.transform.scale(IMAGE, (130,130))
+SUN_IMAGE = pygame.image.load(os.path.join("images", "sun_shiny.png")).convert_alpha()
+SUN_IMAGE = pygame.transform.scale(SUN_IMAGE, (150, 150))
+C_IMAGE = pygame.image.load(os.path.join("images", "pumpkin.png")).convert_alpha()
+C_IMAGE = pygame.transform.scale(C_IMAGE, (70, 70))
