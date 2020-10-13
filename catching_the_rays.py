@@ -109,13 +109,7 @@ def start_screen():
                 pygame.quit()
                 quit()
 
-        display.fill(colors_scheme.YELLOW)
-        largeText = pygame.font.Font('freesansbold.ttf', 115)
-        TextSurf, TextRect = text_objects("A bit Racey", largeText)
-        TextRect.center = ((WIDTH / 2), (HEIGHT / 2))
-        display.blit(TextSurf, TextRect)
-        pygame.display.update()
-        clock.tick(15)
+
 
 
 def main():
