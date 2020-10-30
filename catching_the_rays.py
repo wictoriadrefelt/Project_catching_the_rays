@@ -21,9 +21,8 @@ SUN_IMAGE = pygame.transform.scale(SUN_IMAGE, (150, 150))
 C_IMAGE = pygame.image.load(os.path.join("images", "pumpkin.png")).convert_alpha()
 C_IMAGE = pygame.transform.scale(C_IMAGE, (70, 70))
 sound = path.join(path.dirname(__file__), "sound")
-
 font_name = pygame.font.match_font("arial")
-# TODO Startscreen
+
 
 def happiness_score(screen, text, size, x, y):
     font_name = pygame.font.match_font("arial")
@@ -82,7 +81,6 @@ class Collector(pygame.sprite.Sprite):
         if self.rect.left < 0:
             self.rect.left = 0
 
-
     def collision(self, collector, clouds):
         all_sprites = pygame.sprite.Group()
         hits = pygame.sprite.spritecollide(collector, clouds, True)
@@ -90,26 +88,6 @@ class Collector(pygame.sprite.Sprite):
             c = Cloud()
             all_sprites.add(c)
             clouds.add(c)
-
-       # if hits:
-            #self.happiness <= 0:
-
-
-
-    #def draw_happiness_bar(self):  #TODO, set this up
-
-def start_screen():
-
-    startup = True
-
-    while startup:
-        for event in pygame.event.get():
-            print(event)
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                quit()
-
-
 
 
 def main():
@@ -151,9 +129,7 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
 
-
         all_sprites.update()
-        #collector.collision(collector, clouds)
 
         collision = pygame.sprite.spritecollide(collector, clouds, True)
         for hit in collision:
@@ -171,11 +147,8 @@ def main():
             all_sprites.add(s)
             suns.add(s)
 
-
-
         display.fill(colors_scheme.LIGHT_BLUE)
         all_sprites.draw(display)
-        #draw_happiness_bar()
         happiness_score(display, str(happiness), 10, WIDTH // 2, 10)
         pygame.display.flip()
         clock.tick(100)
